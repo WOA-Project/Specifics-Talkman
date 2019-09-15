@@ -49,7 +49,7 @@ ExcludeFromSelect = *
 
 [OEM_Inst.NT]
 Copyfiles = OEMCopyFiles
-AddReg    = OEM_Settings
+AddReg    = OEM_Settings,User_Settings
 
 [OEM_Settings]
 HKLM, SOFTWARE\Microsoft\AutoBrightness                                                                 , ABSMonitorControl                       , 0x00010001, 0x00000001
@@ -75,6 +75,11 @@ HKLM, SOFTWARE\OEM\Nokia\Display                                                
 HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , BatteryChargePercent                    , 0x10001   , 0x64
 HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , PowerSaveState                          , 0x10001   , 0x0
 
+HKLM, SOFTWARE\OEM\Nokia\Display\Lpm                                                                    , APIVersion                              , 0x0       , 1.0
+HKLM, SOFTWARE\OEM\Nokia\Display\Lpm                                                                    , OPR_Low                                 , 0x10001   , 0x5f
+HKLM, SOFTWARE\OEM\Nokia\Display\Lpm                                                                    , OPR_Med                                 , 0x10001   , 0x190
+
+[User_Settings]
 HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , APIVersion                              , 0x0       , "1.9"
 HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingAppVersion                   , 0x0       , "3.0"
 HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingAtomicUpdate                 , 0x10001   , 0x0
@@ -129,9 +134,8 @@ HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                        
 HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationPAMid                         , 0x10001   , 0x100
 HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , UserSettingDisplayCurrentBrightnessPct  , 0x10001   , 0xffffffff
 
-HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , APIVersion                              , 0x0       , "1.1"
-HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , BatteryChargePercent                    , 0x10001   , 0x64
-HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , PowerSaveState                          , 0x10001   , 0x0
+[User_Settings.Security]
+"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;AU)(A;;GA;;;BG)(A;;GA;;;S-1-15-2-1)(A;;GA;;;WD)"
 
 [OEMCopyFiles]
 oempanel.sys
